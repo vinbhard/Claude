@@ -8,9 +8,9 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
 D = os.environ.get('AFRIYANA_DIR', os.path.dirname(os.path.abspath(__file__))) + '/'
-OUT = D + 'FC Shipment Plan 05-Oct-2026.xlsx'
-
 m = json.load(open(D + 'plan_model.json'))
+from datetime import date
+OUT = D + 'FC Shipment Plan ' + date.fromisoformat(m['run_date']).strftime('%d-%b-%Y') + '.xlsx'
 DEST = m['dest']; IXD = m['ixd']; ASINS = m['asins']
 PROD = m['product']; MSKU = m['msku']
 CAP = m['cap']

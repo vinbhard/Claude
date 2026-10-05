@@ -9,3 +9,10 @@ Files rebuilt from the task transcript.
 
 Run: `python3 build_fc_plan.py && python3 build_fc_workbook.py`
 (reads/writes the script's folder; override with `AFRIYANA_DIR`). Requires `openpyxl`.
+
+## Weekly run (Sundays, in Cowork on the Mac)
+
+Data collection needs Claude in Chrome with the live Seller Central session, so the run lives in
+the Cowork scheduled task `amazon-india-inventory-planning`. `SKILL.md` here is the task brief
+(the original brief plus lessons from the 5 Oct run). Paste it into that task. Each week, update
+`RUN_DATE` / `WINDOW` at the top of `build_fc_plan.py`.

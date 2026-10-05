@@ -19,6 +19,10 @@ from collections import defaultdict
 
 D = os.environ.get('AFRIYANA_DIR', os.path.dirname(os.path.abspath(__file__))) + '/'
 
+# ---- per-run settings: update these each week ----
+RUN_DATE = '2026-10-05'                      # date the plan is built
+WINDOW = ['2026-09-19', '2026-10-03']        # first / last settled day used
+
 WINDOW_DAYS = 15
 COVER_DAYS = 45
 LINE_MIN = 2
@@ -386,7 +390,8 @@ for a in sorted(blocked, key=lambda x: -blocked[x]):
 
 # ---------------------------------------------------------------- outputs
 res = {
- 'window': ['2026-09-19', '2026-10-03'],
+ 'run_date': RUN_DATE,
+ 'window': WINDOW,
  'dest': DEST, 'ixd': IXD,
  'asins': ASINS,
  'product': {a: PRODUCT.get(a, EXTRA_PRODUCT.get(a, a)) for a in ASINS},
